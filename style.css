@@ -878,6 +878,7 @@
             .bsp-cta-buttons {
                 flex-direction: column;
             }
+            .bsp-main-content{width:100%;}
         }
 
 
