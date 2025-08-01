@@ -1,0 +1,1151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Floating Sticky Navbar</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+   <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Google Fonts: Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Swiper.js CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <!-- GSAP Animation Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+        <link href="style.css" rel="stylesheet">
+</head>
+<body>
+    
+    <!-- Header Section -->
+    <header id="header">
+        <div class="container">
+            <div class="header-top">
+                <a href="#" class="logo"><img src="images/icon.jpg"> IvfPrescriptions</a>
+                
+                <!-- Desktop Search -->
+                <div class="header-search">
+                    <i class="fa-solid fa-search search-icon"></i>
+                    <input type="text" id="desktop-search-input" placeholder="Search for medicines & healthcare products">
+                    <div class="search-dropdown" id="search-dropdown">
+                        <h4>Frequently Searched Items</h4>
+                        <ul class="frequently-searched-list">
+                            <li><span>Ecosprin 75mg Strip Of 14 Tablets</span><i class="fa-solid fa-chevron-right"></i></li>
+                            <li><span>Dolo 650mg Strip Of 15 Tablets</span><i class="fa-solid fa-chevron-right"></i></li>
+                            <li><span>Evion 400mg Strip Of 10 Capsules</span><i class="fa-solid fa-chevron-right"></i></li>
+                            <li><span>Pan 40mg Strip Of 15 Tablets</span><i class="fa-solid fa-chevron-right"></i></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Desktop Actions -->
+                <div class="header-top-actions">
+                    <a href="tel:1800123456" class="action-item">
+                        <i class="fa-solid fa-phone-volume"></i>
+                    </a>
+                    <a href="#" class="action-item">
+                        <i class="fa-brands fa-whatsapp"></i>
+                    </a>
+                    <a href="#" class="action-item">
+                         <i class="fa-solid fa-cart-shopping"></i>
+                    </a>
+                </div>
+
+                <!-- Mobile Header Actions -->
+                <div class="mobile-header-actions">
+                    <i class="fa-solid fa-search" id="mobile-search-icon"></i>
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <div class="hamburger-menu" id="hamburger-menu">
+                        <i class="fa-solid fa-bars"></i>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Desktop Navigation -->
+            <div class="header-bottom">
+                <nav>
+                    <ul class="main-nav">
+                        <li><a href="#" class="active">Home</a></li>
+                        <li><a href="#">Medications</a></li>
+                        <li><a href="#">How to Order</a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">FAQs</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Search Bar (Appears below header) -->
+    <div class="mobile-search-container" id="mobile-search-container">
+        <div class="search-input-wrapper">
+            <i class="fa-solid fa-search search-icon"></i>
+            <input type="text" id="mobile-search-input" placeholder="Search for products...">
+        </div>
+        <div class="mobile-suggestions">
+            <h4>Frequently Searched Items</h4>
+            <ul class="frequently-searched-list">
+                <li><span>Ecosprin 75mg Strip Of 14 Tablets</span><i class="fa-solid fa-chevron-right"></i></li>
+                <li><span>Dolo 650mg Strip Of 15 Tablets</span><i class="fa-solid fa-chevron-right"></i></li>
+                <li><span>Evion 400mg Strip Of 10 Capsules</span><i class="fa-solid fa-chevron-right"></i></li>
+                <li><span>Pan 40mg Strip Of 15 Tablets</span><i class="fa-solid fa-chevron-right"></i></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Off-canvas Menu for Mobile -->
+    <div class="offcanvas-menu" id="offcanvas-menu">
+        <div class="offcanvas-header">
+            <span class="offcanvas-close" id="offcanvas-close">&times;</span>
+        </div>
+        <div class="offcanvas-body">
+             <nav>
+                <ul class="main-nav">
+                    <li><a href="#" class="active">Home</a></li>
+                    <li><a href="#">Medications</a></li>
+                    <li><a href="#">How to Order</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">FAQs</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+    <a href="#" class="floating-whatsapp-icon" id="floating-whatsapp-icon">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+    <!-- Hero Slider Section -->
+    <section class="hero-slider">
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <!-- Slide 1 (Align Left) -->
+                <div class="swiper-slide" style="background-color: #2c3e50;background-image: url('images/hs-1.jpg');background-size:cover;" data-animation="grow-down">
+                    <div class="slide-container align-left">
+                        <div class="slide-content align-left">
+                            <h1 style="color:#000;">Affordable IVF Medications, Delivered with Care</h1>
+                            <p  style="color:#000;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et</p>
+                            <a href="#" class="cta-button">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Slide 2 (Align Center) -->
+                <div class="swiper-slide" style="background-color: #8e44ad;background-image: url('images/hs-5.jpg');background-size:cover;" data-animation="grow-big">
+                    <div class="slide-container align-center">
+                        <div class="slide-content align-center">
+                            <h1 style="font-size:180px;line-height:190px;font-weight:600;color:red;">80%</h1>
+                            <p style="color:#000;">Up to 80% Discount</p>
+                            <a href="#" class="cta-button">Learn more</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Slide 3 (Align Right) -->
+                <div class="swiper-slide" style="background-color: #27ae60;background-image: url('images/hs-3.jpg');background-size:cover;" data-animation="from-right">
+                    <div class="slide-container align-right">
+                        <div class="slide-content align-center">
+                            <h1 style="text-align: center;color:#000;">Fast Delivery</h1>
+                            <p  style="text-align: center;color:#000;">Boost your brand's visibility and reach your target customers with our data-driven marketing campaigns.</p>
+                            <a href="#" class="cta-button">Get a Quote</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Add Pagination -->
+            <div class="swiper-pagination"></div>
+        </div>
+    </section>
+    <section id="cs-feature-section" class="cs-feature-section-wrapper">
+        <div class="cs-container-custom">
+            <!-- Grid container for the feature items -->
+            <div class="cs-features-grid">
+
+                <!-- Feature Item 1 -->
+                <div class="cs-feature-item">
+                    <i class="fas fa-shield-alt cs-icon-green"></i>
+                    <div>
+                        <h3>US FDA-Approved Medications</h3>
+                    </div>
+                </div>
+
+                <!-- Feature Item 2 -->
+                <div class="cs-feature-item">
+                    <i class="fas fa-tags cs-icon-orange"></i>
+                    <div>
+                        <h3>Save up to 80%</h3>
+                    </div>
+                </div>
+
+                <!-- Feature Item 3 -->
+                <div class="cs-feature-item">
+                    <i class="fas fa-headset cs-icon-blue"></i>
+                    <div>
+                        <h3>Real Pharmacist Assistance</h3>
+                    </div>
+                </div>
+
+                <!-- Feature Item 4 -->
+                <div class="cs-feature-item">
+                    <i class="fas fa-globe-americas cs-icon-purple"></i>
+                    <div>
+                        <h3>Discreet Worldwide Shipping</h3>
+                    </div>
+                </div>
+
+                <!-- Feature Item 5 -->
+                <div class="cs-feature-item">
+                    <i class="fas fa-file-prescription cs-icon-red"></i>
+                    <div>
+                        <h3>100% Prescription-Based</h3>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <section class="bsp-section">
+        <div class="bsp-container">
+            <h2 class="section-subtitle" style="justify-content: center;">
+                            <img alt="Icon" class="icon-header-img" src="images/icon-second.svg">
+                            <span>Buy our</span>
+            </h2>
+            <h2 class="bsp-section-title">Best Selling Products</h2>
+            <div class="bsp-layout">
+                <!-- Left Sidebar -->
+                <aside class="bsp-sidebar">
+                    <div class="badge-img" style="padding:0 40px 40px">
+                        <img src="images/badge.webp" style="width:100%;">
+                    </div>
+                    <div class="bsp-trust-indicator">
+                        <h3>2,905 Certified Reviews</h3>
+                        <div class="bsp-rating">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                            <span>Rating: 4.9/5</span>
+                        </div>
+                    </div>
+                    
+                    <ul class="bsp-benefits-list">
+                        <li><i class="fas fa-check-circle"></i> Brand Drugs</li>
+                        <li><i class="fas fa-check-circle"></i> FDA-Approved</li>
+                        <li><i class="fas fa-check-circle"></i> Clinic Recommended</li>
+                        <li><i class="fas fa-check-circle"></i> Fast Delivery</li>
+                    </ul>
+                </aside>
+
+                <!-- Right Content -->
+                <main class="bsp-main-content">
+                    <div class="bsp-product-grid">
+                        <!-- Product Cards will be dynamically generated or hardcoded here -->
+                        <div class="bsp-product-card" data-name="Follistim" data-price="$450" data-rating="5" data-reviews="120" data-img="https://placehold.co/400x400/d1e7ff/007bff?text=Follistim" data-desc="Follistim AQ Cartridge is a man-made form of a hormone that occurs naturally in the body. It is used to stimulate a follicle (egg) to develop and mature.">
+                            <div class="bsp-product-image">
+                                <img src="https://placehold.co/400x400/d1e7ff/007bff?text=Follistim" alt="Follistim">
+                                <div class="bsp-product-actions">
+                                    <span class="bsp-action-icon"><i class="fas fa-cart-plus"></i></span>
+                                    <span class="bsp-action-icon bsp-view-details"><i class="fas fa-eye"></i></span>
+                                </div>
+                            </div>
+                            <div class="bsp-product-info">
+                                <div class="bsp-rating">★★★★★</div>
+                                <h3>Follistim</h3>
+                                <p class="bsp-price">$450</p>
+                            </div>
+                        </div>
+                        <div class="bsp-product-card" data-name="Gonal F" data-price="$520" data-rating="4.5" data-reviews="95" data-img="https://placehold.co/400x400/d4edda/28a745?text=Gonal+F" data-desc="Gonal-F is a medication that contains follicle-stimulating hormone (FSH) and is used in fertility treatments to help stimulate the growth of eggs in the ovaries.">
+                            <div class="bsp-product-image">
+                                <img src="https://placehold.co/400x400/d4edda/28a745?text=Gonal+F" alt="Gonal F">
+                                <div class="bsp-product-actions">
+                                    <span class="bsp-action-icon"><i class="fas fa-cart-plus"></i></span>
+                                    <span class="bsp-action-icon bsp-view-details"><i class="fas fa-eye"></i></span>
+                                </div>
+                            </div>
+                            <div class="bsp-product-info">
+                                <div class="bsp-rating">★★★★☆</div>
+                                <h3>Gonal F</h3>
+                                <p class="bsp-price">$520</p>
+                            </div>
+                        </div>
+                        <div class="bsp-product-card" data-name="Menopur" data-price="$85" data-rating="4" data-reviews="80" data-img="https://placehold.co/400x400/fff3cd/ffc107?text=Menopur" data-desc="Menopur is an injectable medication used to stimulate the ovaries to produce multiple eggs for in vitro fertilization (IVF).">
+                            <div class="bsp-product-image">
+                                <img src="https://placehold.co/400x400/fff3cd/ffc107?text=Menopur" alt="Menopur">
+                                <div class="bsp-product-actions">
+                                    <span class="bsp-action-icon"><i class="fas fa-cart-plus"></i></span>
+                                    <span class="bsp-action-icon bsp-view-details"><i class="fas fa-eye"></i></span>
+                                </div>
+                            </div>
+                            <div class="bsp-product-info">
+                                <div class="bsp-rating">★★★★☆</div>
+                                <h3>Menopur</h3>
+                                <p class="bsp-price">$85</p>
+                            </div>
+                        </div>
+                        <div class="bsp-product-card" data-name="Estrace" data-price="$50" data-rating="4.5" data-reviews="70" data-img="https://placehold.co/400x400/f8d7da/dc3545?text=Estrace" data-desc="Estrace is a form of estrogen, a female hormone, used to treat symptoms of menopause and to prepare the uterine lining for embryo transfer in IVF.">
+                            <div class="bsp-product-image">
+                                <img src="https://placehold.co/400x400/f8d7da/dc3545?text=Estrace" alt="Estrace">
+                                <div class="bsp-product-actions">
+                                    <span class="bsp-action-icon"><i class="fas fa-cart-plus"></i></span>
+                                    <span class="bsp-action-icon bsp-view-details"><i class="fas fa-eye"></i></span>
+                                </div>
+                            </div>
+                            <div class="bsp-product-info">
+                                <div class="bsp-rating">★★★★☆</div>
+                                <h3>Estrace</h3>
+                                <p class="bsp-price">$50</p>
+                            </div>
+                        </div>
+                        <div class="bsp-product-card" data-name="Ganirelix" data-price="$110" data-rating="5" data-reviews="60" data-img="https://placehold.co/400x400/d1e7ff/007bff?text=Ganirelix" data-desc="Ganirelix Acetate Injection is used to prevent premature ovulation in women undergoing fertility treatment.">
+                            <div class="bsp-product-image">
+                                <img src="https://placehold.co/400x400/d1e7ff/007bff?text=Ganirelix" alt="Ganirelix">
+                                <div class="bsp-product-actions">
+                                    <span class="bsp-action-icon"><i class="fas fa-cart-plus"></i></span>
+                                    <span class="bsp-action-icon bsp-view-details"><i class="fas fa-eye"></i></span>
+                                </div>
+                            </div>
+                            <div class="bsp-product-info">
+                                <div class="bsp-rating">★★★★★</div>
+                                <h3>Ganirelix</h3>
+                                <p class="bsp-price">$110</p>
+                            </div>
+                        </div>
+                        <div class="bsp-product-card" data-name="Lupron Depot" data-price="$1500" data-rating="4.5" data-reviews="55" data-img="https://placehold.co/400x400/d4edda/28a745?text=Lupron+Depot" data-desc="Lupron Depot is used to treat a variety of conditions, including endometriosis and uterine fibroids, and is also used in some IVF protocols.">
+                            <div class="bsp-product-image">
+                                <img src="https://placehold.co/400x400/d4edda/28a745?text=Lupron+Depot" alt="Lupron Depot">
+                                <div class="bsp-product-actions">
+                                    <span class="bsp-action-icon"><i class="fas fa-cart-plus"></i></span>
+                                    <span class="bsp-action-icon bsp-view-details"><i class="fas fa-eye"></i></span>
+                                </div>
+                            </div>
+                            <div class="bsp-product-info">
+                                <div class="bsp-rating">★★★★☆</div>
+                                <h3>Lupron Depot</h3>
+                                <p class="bsp-price">$1500</p>
+                            </div>
+                        </div>
+                        <div class="bsp-product-card" data-name="Cetrotide" data-price="$95" data-rating="4" data-reviews="48" data-img="https://placehold.co/400x400/fff3cd/ffc107?text=Cetrotide" data-desc="Cetrotide prevents premature ovulation during controlled ovarian stimulation for assisted reproductive technologies.">
+                            <div class="bsp-product-image">
+                                <img src="https://placehold.co/400x400/fff3cd/ffc107?text=Cetrotide" alt="Cetrotide">
+                                <div class="bsp-product-actions">
+                                    <span class="bsp-action-icon"><i class="fas fa-cart-plus"></i></span>
+                                    <span class="bsp-action-icon bsp-view-details"><i class="fas fa-eye"></i></span>
+                                </div>
+                            </div>
+                            <div class="bsp-product-info">
+                                <div class="bsp-rating">★★★★☆</div>
+                                <h3>Cetrotide</h3>
+                                <p class="bsp-price">$95</p>
+                            </div>
+                        </div>
+                        <div class="bsp-product-card" data-name="Crinone Gel" data-price="$120" data-rating="4.5" data-reviews="40" data-img="https://placehold.co/400x400/f8d7da/dc3545?text=Crinone+Gel" data-desc="Crinone is a progesterone gel used to provide progesterone support for embryo implantation and early pregnancy.">
+                            <div class="bsp-product-image">
+                                <img src="https://placehold.co/400x400/f8d7da/dc3545?text=Crinone+Gel" alt="Crinone Gel">
+                                <div class="bsp-product-actions">
+                                    <span class="bsp-action-icon"><i class="fas fa-cart-plus"></i></span>
+                                    <span class="bsp-action-icon bsp-view-details"><i class="fas fa-eye"></i></span>
+                                </div>
+                            </div>
+                            <div class="bsp-product-info">
+                                <div class="bsp-rating">★★★★☆</div>
+                                <h3>Crinone Gel</h3>
+                                <p class="bsp-price">$120</p>
+                            </div>
+                        </div>
+                        <!-- Add 8 more cards to make 16 total -->
+                        <div class="bsp-product-card" data-name="Progesterone Oil" data-price="$60" data-rating="5" data-reviews="150" data-img="https://placehold.co/400x400/d1e7ff/007bff?text=Progesterone" data-desc="Progesterone in oil is an injectable form of progesterone used to support the uterine lining during fertility treatments.">
+                            <div class="bsp-product-image"><img src="https://placehold.co/400x400/d1e7ff/007bff?text=Progesterone" alt="Progesterone Oil"><div class="bsp-product-actions"><span class="bsp-action-icon"><i class="fas fa-cart-plus"></i></span><span class="bsp-action-icon bsp-view-details"><i class="fas fa-eye"></i></span></div></div>
+                            <div class="bsp-product-info"><div class="bsp-rating">★★★★★</div><h3>Progesterone Oil</h3><p class="bsp-price">$60</p></div>
+                        </div>
+                        <div class="bsp-product-card" data-name="Ovidrel" data-price="$130" data-rating="4.5" data-reviews="110" data-img="https://placehold.co/400x400/d4edda/28a745?text=Ovidrel" data-desc="Ovidrel is a trigger shot used to induce final maturation of eggs and ovulation in women undergoing fertility treatments.">
+                            <div class="bsp-product-image"><img src="https://placehold.co/400x400/d4edda/28a745?text=Ovidrel" alt="Ovidrel"><div class="bsp-product-actions"><span class="bsp-action-icon"><i class="fas fa-cart-plus"></i></span><span class="bsp-action-icon bsp-view-details"><i class="fas fa-eye"></i></span></div></div>
+                            <div class="bsp-product-info"><div class="bsp-rating">★★★★☆</div><h3>Ovidrel</h3><p class="bsp-price">$130</p></div>
+                        </div>
+                        <div class="bsp-product-card" data-name="Clomid" data-price="$40" data-rating="4" data-reviews="200" data-img="https://placehold.co/400x400/fff3cd/ffc107?text=Clomid" data-desc="Clomid is an oral medication used to induce ovulation in women who do not ovulate regularly.">
+                            <div class="bsp-product-image"><img src="https://placehold.co/400x400/fff3cd/ffc107?text=Clomid" alt="Clomid"><div class="bsp-product-actions"><span class="bsp-action-icon"><i class="fas fa-cart-plus"></i></span><span class="bsp-action-icon bsp-view-details"><i class="fas fa-eye"></i></span></div></div>
+                            <div class="bsp-product-info"><div class="bsp-rating">★★★★☆</div><h3>Clomid</h3><p class="bsp-price">$40</p></div>
+                        </div>
+                        <div class="bsp-product-card" data-name="Letrozole" data-price="$45" data-rating="4.5" data-reviews="180" data-img="https://placehold.co/400x400/f8d7da/dc3545?text=Letrozole" data-desc="Letrozole is an oral medication that can be used as an alternative to Clomid for ovulation induction.">
+                            <div class="bsp-product-image"><img src="https://placehold.co/400x400/f8d7da/dc3545?text=Letrozole" alt="Letrozole"><div class="bsp-product-actions"><span class="bsp-action-icon"><i class="fas fa-cart-plus"></i></span><span class="bsp-action-icon bsp-view-details"><i class="fas fa-eye"></i></span></div></div>
+                            <div class="bsp-product-info"><div class="bsp-rating">★★★★☆</div><h3>Letrozole</h3><p class="bsp-price">$45</p></div>
+                        </div>
+                    </div>
+
+                    <div class="bsp-cta-buttons">
+                        <a href="#" class="bsp-btn bsp-btn-primary"><i class="fas fa-search"></i> Search for Your Medications</a>
+                        <a href="#" class="bsp-btn bsp-btn-secondary"><i class="fas fa-comment-dots"></i> Generate a Quick Quote</a>
+                    </div>
+                </main>
+            </div>
+        </div>
+    </section>
+    <!-- Product Detail Modal -->
+    <div class="bsp-modal-overlay" id="bsp-product-modal">
+        <div class="bsp-modal-content">
+            <span class="bsp-modal-close" id="bsp-modal-close">&times;</span>
+            <div class="bsp-modal-image">
+                <img src="" alt="Product Image">
+            </div>
+            <div class="bsp-modal-details">
+                <h3>Product Name</h3>
+                <div class="bsp-rating"></div>
+                <p class="bsp-price"></p>
+                <p class="bsp-description"></p>
+            </div>
+        </div>
+    </div>
+    <section class="hto-section" style="background-image: url('images/order.jpg');position: relative;">
+        <div class="hto-container">
+            <h2 class="section-subtitle" style="justify-content: center;">
+                            <img alt="Icon" class="icon-header-img" src="images/icon-second.svg">
+                            <span>How to</span>
+            </h2>
+            <h2 class="hto-section-title">How to Place Your Order</h2>
+            <div class="hto-order-steps">
+                <div class="hto-step-item">
+                    <div class="hto-step-icon"  style="background-color: #dbeafe;"><i class="fas fa-upload" style="color: #2563eb;"></i></div>
+                    <h3>1. Upload Prescription</h3>
+                    <p>Send your doctor’s valid prescription via form or WhatsApp.</p>
+                </div>
+                <div class="hto-step-item">
+                    <div class="hto-step-icon" style="background-color:#dcfce7;"><i class="fas fa-quote-left"  style="color: #16a34a;"></i></div>
+                    <h3>2. Get a Quote</h3>
+                    <p>Receive pricing and availability based on your order.</p>
+                </div>
+                <div class="hto-step-item">
+                    <div class="hto-step-icon" style="background-color: #f3e8ff;"><i class="fas fa-credit-card"  style="color: #9333ea;"></i></i></div>
+                    <h3>3. Make Payment</h3>
+                    <p>Choose from secure payment options (PayPal, cards, bank).</p>
+                </div>
+                <div class="hto-step-item">
+                    <div class="hto-step-icon" style="background-color: #e0e7ff;"> <i class="fas fa-shipping-fast"  style="color: #4f46e5;"></i></div>
+                    <h3>4. Receive Medications</h3>
+                    <p>We ship quickly with tracking and discreet packaging.</p>
+                </div>
+            </div>
+            <div class="hto-order-cta">
+                <a href="#" class="hto-btn hto-btn-secondary">Chat With Pharmacist Now</a>
+            </div>
+        </div>
+    </section>
+    <section style="background-image:url('images/bg.jpg');background-size: cover;">
+        <div class="container-custom" style="padding:80px 20px;">
+            <div class="main-layout">
+                <!-- Image Column (33%) -->
+                <div class="image-column">
+                    <img src="images/img-2.jpg" alt="A professional pharmacist assisting a customer">
+                </div>
+
+                <!-- Content Column (67%) -->
+                <div class="content-column">
+                    <h2 class="section-subtitle" style="justify-content: center;">
+                            <img alt="Icon" class="icon-header-img" src="images/icon-second.svg">
+                            <span>Choose us</span>
+                    </h2>
+                        <h3 class="section-title" style="text-align:center;color:#000;margin-bottom:2rem;">Why Choose Us Section</h3>
+                    <div class="features-grid">
+                        <!-- Feature Item 1 -->
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-check-circle"></i>
+                            </div>
+                            <h3>100% Genuine Medications</h3>
+                        </div>
+                        <!-- Feature Item 2 -->
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-clinic-medical"></i>
+                            </div>
+                            <h3>Licensed Pharmacy Network</h3>
+                        </div>
+                        <!-- Feature Item 3 -->
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-dollar-sign"></i>
+                            </div>
+                            <h3>Transparent Pricing</h3>
+                        </div>
+                        <!-- Feature Item 4 -->
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-headset"></i>
+                            </div>
+                            <h3>Responsive Support Team</h3>
+                        </div>
+                        <!-- Feature Item 5 -->
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-truck-fast"></i>
+                            </div>
+                            <h3>International Tracked Shipping</h3>
+                        </div>
+                        <!-- Feature Item 6 -->
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-box"></i>
+                            </div>
+                            <h3>Discreet, Confidential Packaging</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="ts-section" style="background-image: url(images/bg-2.png);background-size: cover;">
+        <div class="ts-container">
+            <h2 class="section-subtitle" style="justify-content: center;color:#fff;">
+                            <img alt="Icon" class="icon-header-img" src="images/icon-ff.svg">
+                            <span>Testimonial</span>
+                </h2>
+            <h2 class="ts-title">What Our Patients Say</h2>
+        </div>
+        <div class="ts-scroller">
+            <div class="ts-scroller-inner">
+                <!-- Original Set of Cards -->
+                <div class="ts-card">
+                    <div class="ts-card-header">
+                        <img src="https://i.pravatar.cc/50?img=1" alt="Emily S." class="ts-card-photo">
+                        <div class="ts-card-author">
+                            <h3>Emily S.</h3>
+                            <span>USA</span>
+                        </div>
+                    </div>
+                    <div class="ts-card-rating">⭐⭐⭐⭐⭐</div>
+                    <p class="ts-card-review">“Quick delivery and real meds! Very happy with service and the prices are unbeatable. Made a stressful process a little easier.”</p>
+                </div>
+                <div class="ts-card">
+                    <div class="ts-card-header">
+                        <img src="https://i.pravatar.cc/50?img=2" alt="Jessica P." class="ts-card-photo">
+                        <div class="ts-card-author">
+                            <h3>Jessica P.</h3>
+                            <span>Canada</span>
+                        </div>
+                    </div>
+                    <div class="ts-card-rating">⭐⭐⭐⭐⭐</div>
+                    <p class="ts-card-review">“The pharmacist was incredibly helpful and answered all my questions. Pricing was much better than my local pharmacy. Will use again.”</p>
+                </div>
+                <div class="ts-card">
+                    <div class="ts-card-header">
+                        <img src="https://i.pravatar.cc/50?img=3" alt="Sarah W." class="ts-card-photo">
+                        <div class="ts-card-author">
+                            <h3>Sarah W.</h3>
+                            <span>UK</span>
+                        </div>
+                    </div>
+                    <div class="ts-card-rating">⭐⭐⭐⭐⭐</div>
+                    <p class="ts-card-review">“I was hesitant to order online, but IVFprescriptions was professional and discreet. The package arrived on time and was well-packed.”</p>
+                </div>
+                <div class="ts-card">
+                    <div class="ts-card-header">
+                        <img src="https://i.pravatar.cc/50?img=4" alt="David R." class="ts-card-photo">
+                        <div class="ts-card-author">
+                            <h3>David R.</h3>
+                            <span>Australia</span>
+                        </div>
+                    </div>
+                    <div class="ts-card-rating">⭐⭐⭐⭐⭐</div>
+                    <p class="ts-card-review">“Excellent service and genuine products. Made my IVF journey much smoother and less stressful. Highly recommend their services.”</p>
+                </div>
+                <div class="ts-card">
+                    <div class="ts-card-header">
+                        <img src="https://i.pravatar.cc/50?img=5" alt="Maria G." class="ts-card-photo">
+                        <div class="ts-card-author">
+                            <h3>Maria G.</h3>
+                            <span>Germany</span>
+                        </div>
+                    </div>
+                    <div class="ts-card-rating">⭐⭐⭐⭐⭐</div>
+                    <p class="ts-card-review">“Reliable and discreet shipping. Very satisfied with my order and the customer support was top-notch. Thank you!”</p>
+                </div>
+
+                <!-- Duplicated Set of Cards for Infinite Loop -->
+                <div class="ts-card">
+                    <div class="ts-card-header">
+                        <img src="https://i.pravatar.cc/50?img=1" alt="Emily S." class="ts-card-photo">
+                        <div class="ts-card-author">
+                            <h3>Emily S.</h3>
+                            <span>USA</span>
+                        </div>
+                    </div>
+                    <div class="ts-card-rating">⭐⭐⭐⭐⭐</div>
+                    <p class="ts-card-review">“Quick delivery and real meds! Very happy with service and the prices are unbeatable. Made a stressful process a little easier.”</p>
+                </div>
+                <div class="ts-card">
+                    <div class="ts-card-header">
+                        <img src="https://i.pravatar.cc/50?img=2" alt="Jessica P." class="ts-card-photo">
+                        <div class="ts-card-author">
+                            <h3>Jessica P.</h3>
+                            <span>Canada</span>
+                        </div>
+                    </div>
+                    <div class="ts-card-rating">⭐⭐⭐⭐⭐</div>
+                    <p class="ts-card-review">“The pharmacist was incredibly helpful and answered all my questions. Pricing was much better than my local pharmacy. Will use again.”</p>
+                </div>
+                <div class="ts-card">
+                    <div class="ts-card-header">
+                        <img src="https://i.pravatar.cc/50?img=3" alt="Sarah W." class="ts-card-photo">
+                        <div class="ts-card-author">
+                            <h3>Sarah W.</h3>
+                            <span>UK</span>
+                        </div>
+                    </div>
+                    <div class="ts-card-rating">⭐⭐⭐⭐⭐</div>
+                    <p class="ts-card-review">“I was hesitant to order online, but IVFprescriptions was professional and discreet. The package arrived on time and was well-packed.”</p>
+                </div>
+                <div class="ts-card">
+                    <div class="ts-card-header">
+                        <img src="https://i.pravatar.cc/50?img=4" alt="David R." class="ts-card-photo">
+                        <div class="ts-card-author">
+                            <h3>David R.</h3>
+                            <span>Australia</span>
+                        </div>
+                    </div>
+                    <div class="ts-card-rating">⭐⭐⭐⭐⭐</div>
+                    <p class="ts-card-review">“Excellent service and genuine products. Made my IVF journey much smoother and less stressful. Highly recommend their services.”</p>
+                </div>
+                <div class="ts-card">
+                    <div class="ts-card-header">
+                        <img src="https://i.pravatar.cc/50?img=5" alt="Maria G." class="ts-card-photo">
+                        <div class="ts-card-author">
+                            <h3>Maria G.</h3>
+                            <span>Germany</span>
+                        </div>
+                    </div>
+                    <div class="ts-card-rating">⭐⭐⭐⭐⭐</div>
+                    <p class="ts-card-review">“Reliable and discreet shipping. Very satisfied with my order and the customer support was top-notch. Thank you!”</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="blog-home">
+        <div class="container">
+           <!---- <div class="grid lg:grid-cols-12 gap-8 items-center">----->
+            <div style="display:flex;">
+                <div style="width:27%">
+                    <div class="lg:col-span-4 section-heading-wrapper">
+                        <h2 class="section-subtitle">
+                            <img alt="Icon" class="icon-header-img" src="images/icon-second.svg">
+                            <span>Our blog</span>
+                        </h2>
+                        <h3 class="section-title">Latest News</h3>
+                        <div class="section-description">
+                            <p>IVFPharmacy keeps a close watch on important developments in fertility drug pricing, availability and new treatments. Sign up for our updates.</p>
+                        </div>
+                    </div>
+                </div>
+                <div  style="width:73%">
+                    <!-- Blog Posts Grid -->
+                <div class="lg:col-span-8">
+                    <div class="blog-grid">
+                        <!-- Blog Post 1 -->
+                        <div class="item-post">
+                            <div class="post-thumb line-scale">
+                                <a href="#" class="adv-thumb-link">
+                                    <img src="https://www.ivfpharmacy.com/wp-content/uploads/2025/06/1-in-32-born-through-ivf.jpg" alt="1-in-32 born through ivf">
+                                </a>
+                            </div>
+                            <div class="meta-post-style1__date">
+                                <div class="meta-item">
+                                    <span>June 26, 2025</span>
+                                </div>
+                            </div>
+                            <div class="post-info">
+                                <div class="meta-post-style3">
+                                    <div class="post-meta-data__content">
+                                        <i class="fas fa-folder"></i>
+                                        <a href="#">News</a>
+                                    </div>
+                                    <div class="post-meta-data__content">
+                                        <i class="fas fa-comments"></i>
+                                        <a href="#">0 Comments</a>
+                                    </div>
+                                </div>
+                                <h3 class="post-title"><a href="#">One Child Per Class: How IVF Has Become Part of Everyday Life in UK</a></h3>
+                                <a class="author" href="#">
+                                    <img alt="Eva Greenfeld" src="https://secure.gravatar.com/avatar/c937df59336a2b32ffc3c1fe9a8c8007?s=40&d=mm&r=g">
+                                    Eva Greenfeld
+                                </a>
+                            </div>
+                        </div>
+                        <!-- Blog Post 2 -->
+                        <div class="item-post">
+                            <div class="post-thumb line-scale">
+                                <a href="#" class="adv-thumb-link">
+                                    <img src="https://www.ivfpharmacy.com/wp-content/uploads/2025/06/International-Shipping-Delays-2.jpg" alt="Shipping Update">
+                                </a>
+                            </div>
+                            <div class="meta-post-style1__date">
+                                <div class="meta-item">
+                                    <span>June 17, 2025</span>
+                                </div>
+                            </div>
+                            <div class="post-info">
+                                <div class="meta-post-style3">
+                                    <div class="post-meta-data__content">
+                                        <i class="fas fa-folder"></i>
+                                        <a href="#">ivf</a>
+                                    </div>
+                                    <div class="post-meta-data__content">
+                                        <i class="fas fa-comments"></i>
+                                        <a href="#">0 Comments</a>
+                                    </div>
+                                </div>
+                                <h3 class="post-title"><a href="#">International Shipping Update – Back to Normal</a></h3>
+                                <a class="author" href="#">
+                                    <img alt="Judith T" src="https://secure.gravatar.com/avatar/006fd89279196e03cdb0b169b442e8a5?s=40&d=mm&r=g">
+                                    Judith T
+                                </a>
+                            </div>
+                        </div>
+                        <!-- Blog Post 3 -->
+                        <div class="item-post">
+                            <div class="post-thumb line-scale">
+                                <a href="#" class="adv-thumb-link">
+                                    <img src="https://www.ivfpharmacy.com/wp-content/uploads/2025/03/welcome-ifv-featured-image.png" alt="Welcome to new website">
+                                </a>
+                            </div>
+                            <div class="meta-post-style1__date">
+                                <div class="meta-item">
+                                    <span>March 11, 2025</span>
+                                </div>
+                            </div>
+                            <div class="post-info">
+                                <div class="meta-post-style3">
+                                    <div class="post-meta-data__content">
+                                        <i class="fas fa-folder"></i>
+                                        <a href="#">IVF</a>
+                                    </div>
+                                    <div class="post-meta-data__content">
+                                        <i class="fas fa-comments"></i>
+                                        <a href="#">0 Comments</a>
+                                    </div>
+                                </div>
+                                <h3 class="post-title"><a href="#">Welcome to IVFPharmacy’s New Website!</a></h3>
+                                <a class="author" href="#">
+                                    <img alt="ivf" src="https://secure.gravatar.com/avatar/dab2586569e0d0cccf2e04f3d6f6e7f3?s=40&d=mm&r=g">
+                                    ivf
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+                <!-- Blog Section Header -->
+                
+
+                
+            </div>
+        </div>
+    </section>
+    <section class="faq-section" style="background-image: url('images/Flower.webp');background-size: cover;
+    background-position: bottom;
+    background-color: #fff;
+    background-repeat: no-repeat;">
+        <div class="container-custom" style="padding:80px 20px;">
+            <div class="main-layout">
+                <div class="content-column">
+                    <h2 class="section-subtitle" style="justify-content: center;">
+                            <img alt="Icon" class="icon-header-img" src="images/icon-second.svg">
+                            <span>FAQ</span>
+                        </h2>
+                    <h2 class="faq-title">Frequently Asked Questions</h2>
+                        <div class="faq-accordion">
+                            <!-- FAQ Item 1 -->
+                            <div class="faq-item">
+                                <button class="faq-question">
+                                    <span>Do I need a prescription to order?</span>
+                                    <i class="fas fa-plus faq-icon"></i>
+                                </button>
+                                <div class="faq-answer">
+                                    <p>Yes, a valid prescription from a licensed physician is required for all medication orders. You can upload it directly on our website or send it via email or WhatsApp after placing your order.</p>
+                                </div>
+                            </div>
+                            <!-- FAQ Item 2 -->
+                            <div class="faq-item">
+                                <button class="faq-question">
+                                    <span>How long does shipping take?</span>
+                                    <i class="fas fa-plus faq-icon"></i>
+                                </button>
+                                <div class="faq-answer">
+                                    <p>Shipping times vary based on your location. Standard shipping to the US and Europe typically takes 7-14 business days. We also offer expedited shipping options. All orders come with a tracking number.</p>
+                                </div>
+                            </div>
+                            <!-- FAQ Item 3 -->
+                            <div class="faq-item">
+                                <button class="faq-question">
+                                    <span>Are your medications genuine?</span>
+                                    <i class="fas fa-plus faq-icon"></i>
+                                </button>
+                                <div class="faq-answer">
+                                    <p>Absolutely. We source all our medications from a network of licensed and reputable pharmaceutical suppliers. All products are genuine, brand-name, and approved by leading health authorities.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="faq-cta-wrapper">
+                <a href="#" class="faq-view-all-btn">View All FAQs</a>
+            </div>
+                </div>
+                <div class="image-column">
+                    <img src="images/img-2.jpg" alt="A professional pharmacist assisting a customer">
+                </div>
+            </div>
+            
+            
+        </div>
+    </section>
+    <section class="bcta-section" style="background-image: url(images/bg-5.png);">
+        <div class="bcta-container">
+            <h2 class="bcta-headline">Need help choosing your IVF meds?</h2>
+            <p class="bcta-subtext">Our pharmacists are ready to assist you by chat or call.</p>
+            <a href="#" class="bcta-button">
+                <i class="fab fa-whatsapp"></i>
+                <span>Chat Now on WhatsApp</span>
+            </a>
+        </div>
+    </section>
+        <footer class="fs-footer">
+        <div class="fs-container">
+            <div class="fs-grid">
+                <!-- Column 1: About & Social -->
+                <div class="fs-col">
+                    <h3>About Us</h3>
+                    <p>Your trusted partner for affordable IVF medications, delivered with care and confidentiality worldwide.</p>
+                    <div class="fs-social-icons">
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <!-- Column 2: Quick Links -->
+                <div class="fs-col">
+                    <h3>Quick Links</h3>
+                    <ul class="fs-quick-links">
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Refund Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+                <!-- Column 3: Payment -->
+                <div class="fs-col">
+                    <h3>Secure Payments</h3>
+                    <p>We accept all major credit cards and secure payment methods.</p>
+                    <div class="fs-payment-logos">
+                        <img src="https://placehold.co/50x30/ffffff/000000?text=Visa" alt="Visa">
+                        <img src="https://placehold.co/50x30/ffffff/000000?text=MC" alt="Mastercard">
+                        <img src="https://placehold.co/50x30/ffffff/000000?text=PayPal" alt="PayPal">
+                        <img src="https://placehold.co/50x30/ffffff/000000?text=Bank" alt="Bank Transfer">
+                    </div>
+                </div>
+                <!-- Column 4: Newsletter -->
+                <div class="fs-col">
+                    <h3>Stay Updated</h3>
+                    <p>Subscribe to our newsletter for the latest news and special offers.</p>
+                    <form class="fs-newsletter-form">
+                        <input type="email" placeholder="Your email address" required>
+                        <button type="submit">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="fs-bottom-bar">
+            <div class="fs-container">
+                <p>&copy; 2025 IVFprescriptions.com. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const body = document.body;
+            const header = document.getElementById('header');
+
+            // --- Floating/Sticky Header Logic ---
+            if (header) {
+                const scrollThreshold = 10; // Pixels to scroll before the header becomes sticky
+
+                window.addEventListener('scroll', () => {
+                    if (window.scrollY > scrollThreshold) {
+                        header.classList.add('scrolled');
+                    } else {
+                        header.classList.remove('scrolled');
+                    }
+                });
+            }
+
+            // --- Off-Canvas Menu Logic ---
+            const hamburgerMenu = document.getElementById('hamburger-menu');
+            const offcanvasMenu = document.getElementById('offcanvas-menu');
+            const offcanvasClose = document.getElementById('offcanvas-close');
+            
+            if (hamburgerMenu && offcanvasMenu && offcanvasClose) {
+                const openMenu = () => {
+                    offcanvasMenu.classList.add('active');
+                    body.classList.add('no-scroll');
+                };
+                const closeMenu = () => {
+                    offcanvasMenu.classList.remove('active');
+                    body.classList.remove('no-scroll');
+                };
+
+                hamburgerMenu.addEventListener('click', openMenu);
+                offcanvasClose.addEventListener('click', closeMenu);
+            }
+
+            // --- Mobile Slide-Down Search Logic ---
+            const mobileSearchIcon = document.getElementById('mobile-search-icon');
+            const mobileSearchContainer = document.getElementById('mobile-search-container');
+            const mobileSearchInput = document.getElementById('mobile-search-input');
+
+            if (mobileSearchIcon && mobileSearchContainer && mobileSearchInput) {
+                mobileSearchIcon.addEventListener('click', () => {
+                    mobileSearchContainer.classList.toggle('active');
+                    if (mobileSearchContainer.classList.contains('active')) {
+                        mobileSearchInput.focus();
+                    }
+                });
+
+                const mobileSuggestionItems = mobileSearchContainer.querySelectorAll('.frequently-searched-list li');
+                mobileSuggestionItems.forEach(item => {
+                    item.addEventListener('click', () => {
+                        mobileSearchInput.value = item.querySelector('span').textContent;
+                        mobileSearchContainer.classList.remove('active'); // Hide after selection
+                    });
+                });
+            }
+
+            // --- Desktop Dropdown Search Logic ---
+            const desktopSearchInput = document.getElementById('desktop-search-input');
+            const searchDropdown = document.getElementById('search-dropdown');
+            const headerSearchContainer = document.querySelector('.header-search');
+
+            if (desktopSearchInput && searchDropdown && headerSearchContainer) {
+                desktopSearchInput.addEventListener('focus', () => {
+                    searchDropdown.classList.add('active');
+                });
+
+                const suggestionItems = searchDropdown.querySelectorAll('.frequently-searched-list li');
+                suggestionItems.forEach(item => {
+                    item.addEventListener('click', () => {
+                        desktopSearchInput.value = item.querySelector('span').textContent;
+                        searchDropdown.classList.remove('active');
+                    });
+                });
+            }
+
+            // --- Combined Click-Outside Logic ---
+            document.addEventListener('click', (event) => {
+                // Close Desktop Search Dropdown if click is outside the main search container
+                if (headerSearchContainer && !headerSearchContainer.contains(event.target)) {
+                    if (searchDropdown && searchDropdown.classList.contains('active')) {
+                        searchDropdown.classList.remove('active');
+                    }
+                }
+
+                // Close Mobile Search Container if click is outside
+                if (mobileSearchContainer && mobileSearchContainer.classList.contains('active')) {
+                    if (!mobileSearchContainer.contains(event.target) && !mobileSearchIcon.contains(event.target)) {
+                        mobileSearchContainer.classList.remove('active');
+                    }
+                }
+            });
+
+            // --- Close mobile search on scroll ---
+            document.addEventListener('scroll', () => {
+                if (mobileSearchContainer && mobileSearchContainer.classList.contains('active')) {
+                    mobileSearchContainer.classList.remove('active');
+                }
+            });
+            // --- Custom Text Animation Logic ---
+            function animateText(slide) {
+                const animationType = slide.dataset.animation;
+                const contentElements = slide.querySelectorAll('.slide-content > *');
+                
+                // Set initial state
+                gsap.set(contentElements, { autoAlpha: 0 });
+
+                let animationProps;
+                switch(animationType) {
+                    case 'grow-big':
+                        animationProps = { from: { scale: 0.5 }, to: { scale: 1 } };
+                        break;
+                    case 'from-right':
+                        animationProps = { from: { x: 50 }, to: { x: 0 } };
+                        break;
+                    case 'grow-down':
+                    default:
+                        animationProps = { from: { y: 50 }, to: { y: 0 } };
+                        break;
+                }
+
+                gsap.fromTo(contentElements, 
+                    { ...animationProps.from, autoAlpha: 0 },
+                    { 
+                        ...animationProps.to, 
+                        autoAlpha: 1, 
+                        duration: 0.8, 
+                        stagger: 0.2, 
+                        ease: 'power2.out',
+                        delay: 0.4 // Delay to start after slide transition begins
+                    }
+                );
+            }
+
+            // --- Swiper Slider Initialization ---
+            const swiper = new Swiper('.swiper-container', {
+                effect: 'slide', // Changed from 'fade' to 'slide'
+                speed: 800, // Slower speed for a smoother slide
+                grabCursor: true,
+                centeredSlides: true,
+                slidesPerView: 1,
+                loop: true,
+                autoplay: {
+                    delay: 5000,
+                    disableOnInteraction: false,
+                },
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
+                },
+                on: {
+                    init: function () {
+                        // Animate the first slide on initialization
+                        animateText(this.slides[this.activeIndex]);
+                    },
+                    slideChangeTransitionStart: function () {
+                        // Animate the content of the new active slide
+                        animateText(this.slides[this.activeIndex]);
+                    }
+                }
+            });
+            
+        });
+    </script>
+        <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const viewDetailsButtons = document.querySelectorAll('.bsp-view-details');
+            const modalOverlay = document.getElementById('bsp-product-modal');
+            const modalClose = document.getElementById('bsp-modal-close');
+            const body = document.body;
+
+            if (modalOverlay) {
+                viewDetailsButtons.forEach(button => {
+                    button.addEventListener('click', (e) => {
+                        const card = e.currentTarget.closest('.bsp-product-card');
+                        const name = card.dataset.name;
+                        const price = card.dataset.price;
+                        const rating = parseFloat(card.dataset.rating);
+                        const reviews = card.dataset.reviews;
+                        const img = card.dataset.img;
+                        const desc = card.dataset.desc;
+
+                        // Populate modal
+                        const modalImg = modalOverlay.querySelector('.bsp-modal-image img');
+                        modalImg.src = img;
+                        modalImg.alt = name;
+                        modalOverlay.querySelector('.bsp-modal-details h3').textContent = name;
+                        modalOverlay.querySelector('.bsp-modal-details .bsp-price').textContent = price;
+                        modalOverlay.querySelector('.bsp-modal-details .bsp-description').textContent = desc;
+                        
+                        // Create star rating
+                        const ratingContainer = modalOverlay.querySelector('.bsp-modal-details .bsp-rating');
+                        ratingContainer.innerHTML = ''; // Clear previous stars
+                        for(let i = 1; i <= 5; i++) {
+                            if (i <= rating) {
+                                ratingContainer.innerHTML += '★';
+                            } else if (i - 0.5 === rating) {
+                                ratingContainer.innerHTML += '½';
+                            } else {
+                                ratingContainer.innerHTML += '☆';
+                            }
+                        }
+                        ratingContainer.innerHTML += ` (${reviews} reviews)`;
+
+                        // Show modal
+                        modalOverlay.classList.add('active');
+                        body.classList.add('bsp-modal-active');
+                    });
+                });
+
+                const closeModal = () => {
+                    modalOverlay.classList.remove('active');
+                    body.classList.remove('bsp-modal-active');
+                };
+
+                modalClose.addEventListener('click', closeModal);
+                modalOverlay.addEventListener('click', (e) => {
+                    if (e.target === modalOverlay) {
+                        closeModal();
+                    }
+                });
+            }
+        });
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Register the ScrollTrigger plugin with GSAP
+            gsap.registerPlugin(ScrollTrigger);
+
+            const featureSection = document.getElementById('cs-feature-section');
+            const featureItems = document.querySelectorAll('.cs-feature-item');
+
+            // Set the initial state of the items to be animated
+            gsap.set(featureItems, { opacity: 0, y: 30 });
+
+            // Create a ScrollTrigger instance to trigger the animation
+            ScrollTrigger.create({
+                trigger: featureSection,
+                start: "top 80%", // Start animation when the top of the section is 80% from the top of the viewport
+                once: true, // Only run the animation once
+                onEnter: () => {
+                    // Animate all items in at the same time
+                    gsap.to(featureItems, {
+                        opacity: 1,
+                        y: 0,
+                        duration: 0.8,
+                        ease: 'power3.out'
+                    });
+                }
+            });
+        });
+    </script>
+     <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqItems = document.querySelectorAll('.faq-item');
+
+            faqItems.forEach(item => {
+                const questionButton = item.querySelector('.faq-question');
+                const answerDiv = item.querySelector('.faq-answer');
+
+                questionButton.addEventListener('click', () => {
+                    const isActive = item.classList.contains('active');
+
+                    // Optional: Close all other items
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item) {
+                            otherItem.classList.remove('active');
+                            otherItem.querySelector('.faq-answer').style.maxHeight = '0';
+                        }
+                    });
+
+                    // Toggle the clicked item
+                    if (isActive) {
+                        item.classList.remove('active');
+                        answerDiv.style.maxHeight = '0';
+                    } else {
+                        item.classList.add('active');
+                        // Set max-height to the scroll height to smoothly open it
+                        answerDiv.style.maxHeight = answerDiv.scrollHeight + 'px';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
