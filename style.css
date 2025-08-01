@@ -449,12 +449,12 @@
             .mobile-header-actions i {
                 font-size: 1.5rem;
                 cursor: pointer;
-                color: #fff;
+                color: #217875;
             }
             .hamburger-menu {
                 font-size: 1.6rem;
                 cursor: pointer;
-                color: #fff;
+                color: #217875;
             }
             .main-content {
                 padding-top: 90px; /* Adjust for standard mobile header height */
