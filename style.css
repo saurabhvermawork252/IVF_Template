@@ -566,7 +566,7 @@
             .header-top { border-bottom: none; }
             .header-search, .header-top-actions, .header-bottom { display: none; }
             .mobile-header-actions, .hamburger-menu { display: flex; align-items: center; gap: 20px; }
-            .mobile-header-actions i, .hamburger-menu { font-size: 1.5rem; cursor: pointer; color: #fff; }
+            .mobile-header-actions i, .hamburger-menu { font-size: 1.5rem; cursor: pointer; color: #217875; }
             .slide-container { padding: 0 20px; }
             .slide-content { width: 90%; margin: 0 auto; }
             /* Center all content on mobile */
